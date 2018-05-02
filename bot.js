@@ -72,7 +72,7 @@ if (msg.content == '+edit') {
   }
 });
 client.on('guildMemberAdd', member => {
-  if (msg.guild.id === "426715585930461184") {
+  if (member.guild.id === "426715585930461184") {
     var Canvas = require('canvas')
     var jimp = require('jimp')
     
