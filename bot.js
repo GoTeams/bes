@@ -37,7 +37,7 @@ if (msg.content == '+edit') {
     
     })
     
-                    let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
+                    let url = msg.user.displayAvatarURL.endsWith(".webp") ? msg.user.displayAvatarURL.slice(5, -20) + ".png" : msg.user.displayAvatarURL;
                     jimp.read(url, (err, ava) => {
                         if (err) return console.log(err);
                         ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
@@ -61,10 +61,10 @@ if (msg.content == '+edit') {
                             ctx.fontSize = '28px';
                             ctx.fillStyle = "#FFFFFF";
                             ctx.textAlign = "center";
-                            ctx.fillText(member.user.username, 213, 190);
+                            ctx.fillText(msg.user.username, 213, 190);
                             
     client.channels.get("426715585930461186").sendFile(canvas.toBuffer())
-    client.channels.get("426715585930461186").send(`Welcome ${member} To __${member.guild.name}__`)
+    client.channels.get("426715585930461186").send(`Welcome ${msg} To __${msg.guild.name}__`)
     
     
     
