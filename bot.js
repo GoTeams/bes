@@ -61,7 +61,7 @@ if (msg.content == '+edit') {
                             ctx.fontSize = '28px';
                             ctx.fillStyle = "#FFFFFF";
                             ctx.textAlign = "center";
-                            ctx.fillText(msg.user.username, 213, 190);
+                            ctx.fillText(msg.author.username, 213, 190);
                             
     client.channels.get("426715585930461186").sendFile(canvas.toBuffer())
     client.channels.get("426715585930461186").send(`Welcome ${msg} To __${msg.guild.name}__`)
