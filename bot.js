@@ -37,7 +37,7 @@ if (msg.content == '+edit') {
     
     })
     
-                    let url = msg.user.displayAvatarURL.endsWith(".webp") ? msg.user.displayAvatarURL.slice(5, -20) + ".png" : msg.user.displayAvatarURL;
+                    let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
                     jimp.read(url, (err, ava) => {
                         if (err) return console.log(err);
                         ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
