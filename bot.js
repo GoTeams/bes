@@ -11,7 +11,7 @@ client.on('message', msg => {
   }
   
 if (msg.content == '+edit') {
-  if (member.guild.id === "426715585930461184") {
+  if (msg.guild.id === "426715585930461184") {
       
       
     var Canvas = require('canvas')
