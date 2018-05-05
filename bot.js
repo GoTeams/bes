@@ -51,7 +51,7 @@ if (msg.content == '+edit') {
                             ctx.fontSize = '25px';
                             ctx.fillStyle = "#FFFFFF";
                             ctx.textAlign = "center";
-                            ctx.fillText("Welcome To FlightBot Server", 210, 154);
+                            ctx.fillText("Welcome To ${msg.guild.name} Server", 210, 154);
                             
                             //ur name
                             ctx.font = '20px Arial';
