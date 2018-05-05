@@ -51,7 +51,7 @@ if (msg.content == '+edit') {
                             ctx.fontSize = '25px';
                             ctx.fillStyle = "#FFFFFF";
                             ctx.textAlign = "center";
-                            ctx.fillText("Welcome To ${msg.guild.name} Server", 210, 154);
+                            ctx.fillText(`Welcome To ${msg.guild.name} Server`, 210, 154);
                             
                             //ur name
                             ctx.font = '20px Arial';
@@ -60,8 +60,8 @@ if (msg.content == '+edit') {
                             ctx.textAlign = "center";
                             ctx.fillText(msg.author.username, 213, 190);
                             
-    client.channels.sendFile(canvas.toBuffer())
-    client.channels.send(`Welcome ${msg} To __${msg.guild.name}__`)
+    msg.channel.sendFile(canvas.toBuffer())
+    msg.channel.send(`Welcome ${msg} To __${msg.guild.name}__`)
     
     
     })
