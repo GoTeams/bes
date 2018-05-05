@@ -8,7 +8,7 @@ client.on('ready', () => {
 client.on('message', msg => {
 
 if (msg.content == '+edit') {
-  if (msg.guild.id === "426715585930461184") {
+  if (msg.guild.id === "426715585930461184" || msg.guild.id == '439033827499835414') {
       
       
     var Canvas = require('canvas')
