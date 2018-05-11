@@ -71,6 +71,9 @@ if (msg.content == '+edit') {
     }
   }
   if (msg.content == '+reedit') {
+        
+var Canvas = require('canvas')
+var jimp = require('jimp')
       //10px Impact
       let Image = Canvas.Image,
       canvas = new Canvas(401, 202),
@@ -80,13 +83,14 @@ if (msg.content == '+edit') {
   ctx.antialias = 'subpixel';
   ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
   ctx.shadowOffsetY = 2;
-  ctx.shadowBlur = 4;
+  ctx.shadowBlur = 2;
   fs.readFile(`./img/s1.png`, function (err, Background) {
       if (err) return console.log(err);
       let BG = Canvas.Image;
       let ground = new Image;
       ground.src = Background;
       ctx.drawImage(ground, 0, 0, 401, 202);
+
 })
 
           let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
