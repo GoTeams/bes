@@ -72,19 +72,54 @@ if (msg.content == '+edit') {
   }
   if (msg.content == '+reedit') {
         
+// var Canvas = require('canvas')
+// var jimp = require('jimp')
+//       //10px Impact
+//       let Image = Canvas.Image,
+//       canvas = new Canvas(401, 202),
+//       ctx = canvas.getContext('2d');
+//   ctx.patternQuality = 'bilinear';
+//   ctx.filter = 'bilinear';
+//   ctx.antialias = 'subpixel';
+//   ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+//   ctx.shadowOffsetY = 2;
+//   ctx.shadowBlur = 2;
+//   ctx.font = '10px Impact';
+
+//   fs.readFile(`./img/s1.png`, function (err, Background) {
+//       if (err) return console.log(err);
+//       let BG = Canvas.Image;
+//       let ground = new Image;
+//       ground.src = Background;
+//       ctx.drawImage(ground, 0, 0, 401, 202);
+
+// })
+
+//           let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
+//           jimp.read(url, (err, ava) => {
+//               if (err) return console.log(err);
+//               ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+//                   if (err) return console.log(err);
+//                   ctx.font = '10px Impact';
+//                   ctx.fontSize = '10px';
+//                   ctx.fillStyle = "#FFFFFF";
+//                   ctx.drawImage(Image, 0, 0, Image.width / 470, Image.height / 170);
+//                   ctx.fillText(`فقط تجربة`, 205, 116);
+
+// ctx.beginPath();
+// ctx.lineTo(50, 102);
+// ctx.stroke();
+
+//     msg.channel.sendFile(canvas.toBuffer())
+//               })
+//             })
 var Canvas = require('canvas')
-var jimp = require('jimp')
-      //10px Impact
-      let Image = Canvas.Image,
-      canvas = new Canvas(401, 202),
-      ctx = canvas.getContext('2d');
-  ctx.patternQuality = 'bilinear';
-  ctx.filter = 'bilinear';
-  ctx.antialias = 'subpixel';
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-  ctx.shadowOffsetY = 2;
-  ctx.shadowBlur = 2;
-  ctx.font = '10px Impact';
+, Image = new Canvas.Image
+, canvas = new Canvas(450, 170)
+, ctx = canvas.getContext('2d');
+ctx.font = '10px Impact';
+
+Image.src = canvas.toBuffer();
 
   fs.readFile(`./img/s1.png`, function (err, Background) {
       if (err) return console.log(err);
@@ -100,17 +135,15 @@ var jimp = require('jimp')
               if (err) return console.log(err);
               ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
                   if (err) return console.log(err);
-                  ctx.font = '10px Impact';
-                  ctx.fontSize = '10px';
-                  ctx.fillStyle = "#FFFFFF";
-                  ctx.textAlign = "center";
-                  ctx.fillText(`فقط تجربة`, 205, 116);
-                       
+            
+  console.log(Image);
+ctx.drawImage(Image, 0, 0, Image.width / 470, Image.height / 170);
+ctx.fillText(args.join("  "),110, 70);
+
+
 ctx.beginPath();
 ctx.lineTo(50, 102);
 ctx.stroke();
-
-    msg.channel.sendFile(canvas.toBuffer())
               })
             })
   }
