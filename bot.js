@@ -113,13 +113,17 @@ if (msg.content == '+edit') {
 //     msg.channel.sendFile(canvas.toBuffer())
 //               })
 //             })
-var Canvas = require('canvas')
-, Image = new Canvas.Image
-, canvas = new Canvas(450, 170)
-, ctx = canvas.getContext('2d');
-ctx.font = '10px Impact';
 
-Image.src = canvas.toBuffer();
+var Canvas = require('canvas')
+var jimp = require('jimp')
+      //10px Impact
+      let Image = Canvas.Image,
+      canvas = new Canvas(401, 202),
+      ctx = canvas.getContext('2d');
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+  ctx.shadowOffsetY = 2;
+  ctx.shadowBlur = 2;
+  ctx.font = '10px Impact';
 
   fs.readFile(`./img/s1.png`, function (err, Background) {
       if (err) return console.log(err);
