@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+    
+var Canvas = require('canvas')
+var jimp = require('jimp')
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -10,9 +13,7 @@ client.on('message', msg => {
 if (msg.content == '+edit') {
   if (msg.guild.id === "426715585930461184" || msg.guild.id == '439033827499835414') {
       
-      
-    var Canvas = require('canvas')
-    var jimp = require('jimp')
+  
     
     const w = ['./img/w1.jpg','./img/w2.jpg','./img/w3.jpg','./img/w4.jpg','./img/w6.jpg'];
     
