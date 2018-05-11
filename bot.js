@@ -84,6 +84,8 @@ var jimp = require('jimp')
   ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
   ctx.shadowOffsetY = 2;
   ctx.shadowBlur = 2;
+  ctx.font = '10px Impact';
+
   fs.readFile(`./img/s1.png`, function (err, Background) {
       if (err) return console.log(err);
       let BG = Canvas.Image;
@@ -102,7 +104,7 @@ var jimp = require('jimp')
                   ctx.fontSize = '10px';
                   ctx.fillStyle = "#FFFFFF";
                   ctx.textAlign = "center";
-                  ctx.fillText(`فقط تجربة >? JUST TEST`, 205, 116);
+                  ctx.fillText(`فقط تجربة`, 205, 116);
                        
 ctx.beginPath();
 ctx.lineTo(50, 102);
