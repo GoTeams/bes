@@ -104,6 +104,10 @@ var jimp = require('jimp')
                   ctx.textAlign = "center";
                   ctx.fillText(`فقط تجربة >? JUST TEST`, 205, 116);
                        
+ctx.beginPath();
+ctx.lineTo(50, 102);
+ctx.stroke();
+
     msg.channel.sendFile(canvas.toBuffer())
               })
             })
