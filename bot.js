@@ -69,6 +69,40 @@ if (msg.content == '+edit') {
     
     }
   }
+  if (msg.content == '+reedit') {
+      //10px Impact
+      let Image = Canvas.Image,
+      canvas = new Canvas(401, 202),
+      ctx = canvas.getContext('2d');
+  ctx.patternQuality = 'bilinear';
+  ctx.filter = 'bilinear';
+  ctx.antialias = 'subpixel';
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+  ctx.shadowOffsetY = 2;
+  ctx.shadowBlur = 4;
+  fs.readFile(`./img/s1.png`, function (err, Background) {
+      if (err) return console.log(err);
+      let BG = Canvas.Image;
+      let ground = new Image;
+      ground.src = Background;
+      ctx.drawImage(ground, 0, 0, 401, 202);
+})
+
+          let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
+          jimp.read(url, (err, ava) => {
+              if (err) return console.log(err);
+              ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                  if (err) return console.log(err);
+                  ctx.font = '10px Impact';
+                  ctx.fontSize = '10px';
+                  ctx.fillStyle = "#FFFFFF";
+                  ctx.textAlign = "center";
+                  ctx.fillText(`فقط تجربة >? JUST TEST`, 205, 116);
+                       
+    msg.channel.sendFile(canvas.toBuffer())
+              })
+            })
+  }
 });
 client.on('guildMemberAdd', member => {
   if (member.guild.id === "426715585930461184") {
@@ -129,6 +163,8 @@ client.on('guildMemberAdd', member => {
     })
     })
   }
+  //10px Impact
+
 });
 
 client.login(process.env.BOT_TOKEN);
