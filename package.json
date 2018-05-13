@@ -36,7 +36,9 @@
     "maljs": "^0.3.0",
     "pretty-ms": "^3.1.0",
     "sqlite": "^2.9.1",
-    "ascii-data-table": "^2.1.1"
+    "ascii-data-table": "^2.1.1",
+    "discord-spoiler-bot": "^2.0.5",
+    "gm": "^1.23.1"
   },
   "engines": {
     "node": "8.x"
