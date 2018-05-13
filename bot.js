@@ -13,7 +13,7 @@ client.on('message', msg => {
 
 if (msg.content == '$edit') {
   gm(200, 400, "#ddff99f3")
-  .drawText(10, 50, "ressssssssssssجس س هلا")
+  .drawText(10, 50, "هلا والله")
   .write("./img/w1.jpg", function (err) {
     if (err) {console.log(err);}
     if (!err) {msg.channel.sendFile("./img/w1.jpg")}
