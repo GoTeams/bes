@@ -19,6 +19,15 @@ if (msg.content == '$edit') {
     if (!err) {msg.channel.sendFile("./img/w1.jpg")}
   });
 }
+    if (msg.content == '$editd') {
+  gm(200, 400, "#ddff99f3")
+  .font("Helvetica.ttf", 12)
+  .drawText(10, 50, "هلا")
+  .write("./img/w1.jpg", function (err) {
+    if (err) {console.log(err);}
+    if (!err) {msg.channel.sendFile("./img/w1.jpg")}
+  });
+}
 if (msg.content == '+edit') {
   if (msg.guild.id === "426715585930461184" || msg.guild.id == '439033827499835414') {
       
