@@ -11,112 +11,112 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 
-if (msg.content == '$edit') {
-var Canvas = require('canvas')
-, Image = new Canvas.Image
-, canvas = new Canvas(450, 170)
-, ctx = canvas.getContext('2d');
-ctx.font = '10px Impact';
+// if (msg.content == '$edit') {
+// var Canvas = require('canvas')
+// , Image = new Canvas.Image
+// , canvas = new Canvas(450, 170)
+// , ctx = canvas.getContext('2d');
+// ctx.font = '10px Impact';
 
-Image.src = canvas.toBuffer();
-fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-  if (err) return console.log(err);
-  let BG = Canvas.Image;
-  let ground = new Image;
-  ground.src = Background;
-  ctx.drawImage(ground, 0, 0, 401, 202);
+// Image.src = canvas.toBuffer();
+// fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+//   if (err) return console.log(err);
+//   let BG = Canvas.Image;
+//   let ground = new Image;
+//   ground.src = Background;
+//   ctx.drawImage(ground, 0, 0, 401, 202);
 
-})
+// })
 
-      let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
-      jimp.read(url, (err, ava) => {
-          if (err) return console.log(err);
-          ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-              if (err) return console.log(err);
+//       let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
+//       jimp.read(url, (err, ava) => {
+//           if (err) return console.log(err);
+//           ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+//               if (err) return console.log(err);
 
-  console.log(Image);
-ctx.drawImage(Image, 0, 0, Image.width / 470, Image.height / 170);
-ctx.fillText(args.join("  "),110, 70);
+//   console.log(Image);
+// ctx.drawImage(Image, 0, 0, Image.width / 470, Image.height / 170);
+// ctx.fillText(args.join("  "),110, 70);
 
 
-ctx.beginPath();
-ctx.lineTo(50, 102);
-ctx.stroke();
+// ctx.beginPath();
+// ctx.lineTo(50, 102);
+// ctx.stroke();
 
-msg.channel.sendFile(canvas.toBuffer());
+// msg.channel.sendFile(canvas.toBuffer());
 
-          })
-        })
-}
-if (msg.content == '$editd') {
-  gm(200, 400, "#ddff99f3")
-  .font("Arial.ttf", 12)
-  .drawText(10, 50, "هلا")
-  .write("./img/w1.jpg", function (err) {
-    if (err) {console.log(err);}
-    if (!err) {msg.channel.sendFile("./img/w1.jpg")}
-  });
-}
-if (msg.content == '+edit') {
-  if (msg.guild.id === "426715585930461184" || msg.guild.id == '439033827499835414') {
+//           })
+//         })
+// }
+// if (msg.content == '$editd') {
+//   gm(200, 400, "#ddff99f3")
+//   .font("Arial.ttf", 12)
+//   .drawText(10, 50, "هلا")
+//   .write("./img/w1.jpg", function (err) {
+//     if (err) {console.log(err);}
+//     if (!err) {msg.channel.sendFile("./img/w1.jpg")}
+//   });
+// }
+// if (msg.content == '+edit') {
+//   if (msg.guild.id === "426715585930461184" || msg.guild.id == '439033827499835414') {
       
   
     
-    const w = ['./img/w1.jpg','./img/w2.jpg','./img/w3.jpg','./img/w4.jpg','./img/w6.jpg'];
+//     const w = ['./img/w1.jpg','./img/w2.jpg','./img/w3.jpg','./img/w4.jpg','./img/w6.jpg'];
     
-            let Image = Canvas.Image,
-                canvas = new Canvas(401, 202),
-                ctx = canvas.getContext('2d');
-            ctx.patternQuality = 'bilinear';
-            ctx.filter = 'bilinear';
-            ctx.antialias = 'subpixel';
-            ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-            ctx.shadowOffsetY = 2;
-            ctx.shadowBlur = 2;
-            fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-                if (err) return console.log(err);
-                let BG = Canvas.Image;
-                let ground = new Image;
-                ground.src = Background;
-                ctx.drawImage(ground, 0, 0, 401, 202);
+//             let Image = Canvas.Image,
+//                 canvas = new Canvas(401, 202),
+//                 ctx = canvas.getContext('2d');
+//             ctx.patternQuality = 'bilinear';
+//             ctx.filter = 'bilinear';
+//             ctx.antialias = 'subpixel';
+//             ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+//             ctx.shadowOffsetY = 2;
+//             ctx.shadowBlur = 2;
+//             fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+//                 if (err) return console.log(err);
+//                 let BG = Canvas.Image;
+//                 let ground = new Image;
+//                 ground.src = Background;
+//                 ctx.drawImage(ground, 0, 0, 401, 202);
     
-    })
+//     })
     
-                    let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
-                    jimp.read(url, (err, ava) => {
-                        if (err) return console.log(err);
-                        ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-                            if (err) return console.log(err);
+//                     let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
+//                     jimp.read(url, (err, ava) => {
+//                         if (err) return console.log(err);
+//                         ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+//                             if (err) return console.log(err);
     
-                            //Avatar
-                            let Avatar = Canvas.Image;
-                            let ava = new Avatar;
-                            ava.src = buf;
-                            ctx.drawImage(ava, 152, 27, 95, 95);
+//                             //Avatar
+//                             let Avatar = Canvas.Image;
+//                             let ava = new Avatar;
+//                             ava.src = buf;
+//                             ctx.drawImage(ava, 152, 27, 95, 95);
                             
-                                                    //wl
-                            ctx.font = '20px Arial Bold';
-                            ctx.fontSize = '25px';
-                            ctx.fillStyle = "#FFFFFF";
-                            ctx.textAlign = "center";
-                            ctx.fillText(`Welcome To ${msg.guild.name} Server`, 210, 154);
+//                                                     //wl
+//                             ctx.font = '20px Arial Bold';
+//                             ctx.fontSize = '25px';
+//                             ctx.fillStyle = "#FFFFFF";
+//                             ctx.textAlign = "center";
+//                             ctx.fillText(`Welcome To ${msg.guild.name} Server`, 210, 154);
                             
-                            //ur name
-                            ctx.font = '20px Arial';
-                            ctx.fontSize = '28px';
-                            ctx.fillStyle = "#FFFFFF";
-                            ctx.textAlign = "center";
-                            ctx.fillText(msg.author.username, 213, 190);
+//                             //ur name
+//                             ctx.font = '20px Arial';
+//                             ctx.fontSize = '28px';
+//                             ctx.fillStyle = "#FFFFFF";
+//                             ctx.textAlign = "center";
+//                             ctx.fillText(msg.author.username, 213, 190);
                             
-    msg.channel.sendFile(canvas.toBuffer())
-    msg.channel.send(`Welcome ${msg} To __${msg.guild.name}__`)
+//     msg.channel.sendFile(canvas.toBuffer())
+//     msg.channel.send(`Welcome ${msg} To __${msg.guild.name}__`)
     
     
-    })
-    })
+//     })
+//     })
     
-    }
-  }
+//     }
+//   }
   if (msg.content == '+reedit') {
         
 // var Canvas = require('canvas')
