@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+const gm = require('gm').subClass({imageMagick: true});
     
 var Canvas = require('canvas')
 var jimp = require('jimp')
@@ -10,6 +11,14 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 
+if (msg.content == '$edit') {
+  gm(200, 400, "#ddff99f3")
+  .drawText(10, 50, "from scratch")
+  .write("./img/w1.jpg", function (err) {
+    if (err) {console.log(err);}
+    if (!err) {msg.channel.sendFile("./img/w1.jpg")}
+  });
+}
 if (msg.content == '+edit') {
   if (msg.guild.id === "426715585930461184" || msg.guild.id == '439033827499835414') {
       
