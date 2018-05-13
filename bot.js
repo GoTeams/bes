@@ -12,12 +12,41 @@ client.on('ready', () => {
 client.on('message', msg => {
 
 if (msg.content == '$edit') {
-  gm(200, 400, "#ddff99f3")
-  .drawText(10, 50, "هلا والله")
-  .write("./img/w1.jpg", function (err) {
-    if (err) {console.log(err);}
-    if (!err) {msg.channel.sendFile("./img/w1.jpg")}
-  });
+var Canvas = require('canvas')
+, Image = new Canvas.Image
+, canvas = new Canvas(450, 170)
+, ctx = canvas.getContext('2d');
+ctx.font = '10px Impact';
+
+Image.src = canvas.toBuffer();
+fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+  if (err) return console.log(err);
+  let BG = Canvas.Image;
+  let ground = new Image;
+  ground.src = Background;
+  ctx.drawImage(ground, 0, 0, 401, 202);
+
+})
+
+      let url = msg.author.displayAvatarURL.endsWith(".webp") ? msg.author.displayAvatarURL.slice(5, -20) + ".png" : msg.author.displayAvatarURL;
+      jimp.read(url, (err, ava) => {
+          if (err) return console.log(err);
+          ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+              if (err) return console.log(err);
+
+  console.log(Image);
+ctx.drawImage(Image, 0, 0, Image.width / 470, Image.height / 170);
+ctx.fillText(args.join("  "),110, 70);
+
+
+ctx.beginPath();
+ctx.lineTo(50, 102);
+ctx.stroke();
+
+msg.channel.sendFile(canvas.toBuffer());
+
+          })
+        })
 }
 if (msg.content == '$editd') {
   gm(200, 400, "#ddff99f3")
