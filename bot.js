@@ -19,9 +19,9 @@ if (msg.content == '$edit') {
     if (!err) {msg.channel.sendFile("./img/w1.jpg")}
   });
 }
-    if (msg.content == '$editd') {
+if (msg.content == '$editd') {
   gm(200, 400, "#ddff99f3")
-  .font("Helvetica.ttf", 12)
+  .font("Arial.ttf", 12)
   .drawText(10, 50, "هلا")
   .write("./img/w1.jpg", function (err) {
     if (err) {console.log(err);}
